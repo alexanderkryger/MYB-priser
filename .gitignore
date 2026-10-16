@@ -1,0 +1,6 @@
+.DS_Store
+*.pdf
+# originale logo-filer (kopier ligger i assets/)
+MYB_logo_dark.png
+logo-mindyourbeauty-hvid.png
+.vercel

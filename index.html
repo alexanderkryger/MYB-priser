@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Mind Your Beauty – Prisliste SE 2026</title>
+  <link rel="icon" type="image/png" href="assets/logo-dark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <img class="logo logo-dark" src="assets/logo-dark.png" alt="Mind Your Beauty" width="207" height="48" />
+      <img class="logo logo-white" src="assets/logo-white.png" alt="Mind Your Beauty" width="207" height="48" />
+      <div class="header-meta">
+        <span class="pill">Prisliste Sverige 2026</span>
+        <span class="pill pill-muted">SEK</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="kpis" aria-label="Overblik">
+      <div class="kpi"><span class="kpi-label">Produkter</span><span class="kpi-value" id="kpi-count">–</span><span class="kpi-sub" id="kpi-count-sub"></span></div>
+      <div class="kpi"><span class="kpi-label">Kategorier</span><span class="kpi-value" id="kpi-cats">–</span><span class="kpi-sub">i visningen</span></div>
+      <div class="kpi"><span class="kpi-label">Gns. indkøbspris</span><span class="kpi-value" id="kpi-avg">–</span><span class="kpi-sub">i visningen</span></div>
+      <div class="kpi"><span class="kpi-label">Gns. avance</span><span class="kpi-value" id="kpi-margin">–</span><span class="kpi-sub">produkter med RRP, ex. moms</span></div>
+    </section>
+
+    <section class="controls" aria-label="Søg og filtrér">
+      <label class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+        <input id="q" type="search" placeholder="Søg på produktnavn, SKU eller stregkode…" autocomplete="off" spellcheck="false" />
+        <kbd>/</kbd>
+      </label>
+
+      <div class="filters">
+        <div class="segmented" role="group" aria-label="Type" id="type-filter">
+          <button type="button" data-type="" class="active">Alle</button>
+          <button type="button" data-type="Retail">Retail</button>
+          <button type="button" data-type="Professional">Professional</button>
+          <button type="button" data-type="Spa">Spa</button>
+        </div>
+        <select id="group" aria-label="Område">
+          <option value="">Alle områder</option>
+        </select>
+        <select id="cat" aria-label="Kategori">
+          <option value="">Alle kategorier</option>
+        </select>
+        <button type="button" id="reset" class="link-btn" hidden>Nulstil</button>
+      </div>
+    </section>
+
+    <section class="results">
+      <div class="results-head">
+        <p id="result-count" aria-live="polite"></p>
+      </div>
+
+      <div class="table-wrap">
+        <table id="table">
+          <thead>
+            <tr>
+              <th data-sort="sku">SKU</th>
+              <th data-sort="name">Produkt</th>
+              <th data-sort="sizeNum">Størrelse</th>
+              <th data-sort="ean" class="col-ean">Stregkode</th>
+              <th data-sort="pp" class="num">Indkøb</th>
+              <th data-sort="rrp" class="num">RRP</th>
+              <th data-sort="margin" class="num">Avance</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <div id="empty" class="empty" hidden>
+        <p class="empty-title">Ingen produkter fundet</p>
+        <p>Prøv et andet søgeord, eller nulstil filtrene.</p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>Alle priser i SEK. Avance er beregnet ud fra RRP ex. 25 % moms: (RRP ÷ 1,25 − indkøb) ÷ (RRP ÷ 1,25). Klik på en SKU eller stregkode for at kopiere den.</p>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
